@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ledoo — Lista de tareas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles/styles.css" />
+</head>
+<body class="theme-dark">
+  <div id="app">
+    <!-- Topbar -->
+    <header class="topbar" aria-label="Barra superior">
+        <span class="logo">Ledoo</span>
+        <label class="search">
+          <input type="search" placeholder="Buscar tareas…" />
+        </label>
+        <button class="btn-icon" aria-label="Nueva tarea">＋</button>
+        <button class="btn-icon" aria-label="Notificaciones">🔔</button>
+        <button class="btn-icon" aria-label="Perfil">👤</button>
+        <!-- Botón hamburguesa -->
+        <button class="btn-icon hamburger" aria-label="Abrir ajustes">☰</button>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Barra lateral">
+      <div class="user-card">
+        <img src="assets/images/icons/User.png" alt="Icono de perfil de usuario">
+        <div class="user-info">
+          <div class="user-name">Nombre de usuario</div>
+          <div class="user-email">correousuario@gmail.com</div>
+        </div>
+      </div>
+
+      <nav class="nav-sections" aria-label="Secciones">
+        <button class="nav-item is-active">
+          <img src="assets/images/icons/Sun.png" alt="Icono de sección para hoy">
+          <span>Hoy</span>
+        </button>
+        <button class="nav-item">
+          <img src="assets/images/icons/Star.png" alt="Icono de sección para importante">
+          <span>Importante</span>
+        </button>
+        <button class="nav-item">
+          <img src="assets/images/icons/Check square.png" alt="Icono de sección para tareas">
+          <span>Tareas</span>
+        </button>
+        <button class="nav-item">
+          <img src="assets/images/icons/Calendar.png" alt="Icono de sección para planificado">
+          <span>Planificado</span>
+        </button>
+      </nav>
+
+      <div class="divider" role="separator"></div>
+
+      <div class="lists">
+        <div class="lists-header">
+          <span>Mis listas</span>
+          <button class="btn-icon" aria-label="Crear lista">＋</button>
+        </div>
+        <ul class="list-group">
+          <li><button class="list-item">Trabajo</button></li>
+          <li><button class="list-item">Personal</button></li>
+          <li><button class="list-item">Estudio</button></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main" aria-label="Contenido principal">
+      <header class="main-header">
+        <h1>Hoy</h1>
+        <div class="actions">
+          <label class="search">
+            <span class="sr-only">Buscar tareas</span>
+            <input type="search" placeholder="Buscar tareas…" />
+          </label>
+          <button class="btn" aria-label="Nueva tarea">Nueva tarea</button>
+        </div>
+      </header>
+
+      <section class="tasks" aria-label="Lista de tareas">
+        <article class="task">
+          <label class="checkbox">
+            <input type="checkbox" aria-label="Completar tarea: Preparar informe" />
+            <span></span>
+          </label>
+          <div class="task-body">
+            <div class="task-title">Preparar informe</div>
+            <div class="task-meta">
+              <span class="tag important">Importante</span>
+              <span class="date">Hoy, 16:00</span>
+            </div>
+          </div>
+          <div class="task-actions">
+            <button class="btn-icon" aria-label="Marcar importante">★</button>
+            <button class="btn-icon" aria-label="Editar">✎</button>
+            <button class="btn-icon" aria-label="Eliminar">🗑</button>
+          </div>
+        </article>
+
+        <article class="task">
+          <label class="checkbox">
+            <input type="checkbox" aria-label="Completar tarea: Comprar víveres" />
+            <span></span>
+          </label>
+          <div class="task-body">
+            <div class="task-title">Comprar víveres</div>
+            <div class="task-meta">
+              <span class="date">Mañana</span>
+            </div>
+          </div>
+          <div class="task-actions">
+            <button class="btn-icon" aria-label="Marcar importante">☆</button>
+            <button class="btn-icon" aria-label="Editar">✎</button>
+            <button class="btn-icon" aria-label="Eliminar">🗑</button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <!-- Panel de ajustes hamburguesa -->
+  <aside class="settings-panel" aria-label="Ajustes">
+    <div class="settings-header">
+      <h3>Ajustes</h3>
+      <button class="btn-icon close-settings" aria-label="Cerrar ajustes">✖</button>
+    </div>
+    <div class="section-actions">
+      <button class="btn-outline">Claro</button>
+      <button class="btn-outline is-active">Oscuro</button>
+    </div>
+    <div class="wallpaper-grid">
+      <button class="wallpaper-card"><img src="assets/images/wallpapers/Fondo1.png" alt="Montaña" /></button>
+      <button class="wallpaper-card"><img src="assets/images/wallpapers/Fondo2.png" alt="Ciudad" /></button>
+      <button class="wallpaper-card"><img src="assets/images/wallpapers/Fondo3.png" alt="Costa" /></button>
+      <button class="wallpaper-card"><img src="assets/images/wallpapers/Fondo4.png" alt="Lago" /></button>
+      <button class="wallpaper-card"><img src="assets/images/wallpapers/Fondo5.png" alt="Bosque" /></button>
+      <button class="wallpaper-card"><img src="assets/images/wallpapers/Fondo6.png" alt="Valle" /></button>
+    </div>
+  </aside>
+
+  <!-- Scripts -->
+  <script>
+    const hamburgerBtn = document.querySelector('.hamburger');
+    const settingsPanel = document.querySelector('.settings-panel');
+    const closeBtn = document.querySelector('.close-settings');
+    const wallpaperButtons = document.querySelectorAll('.wallpaper-card img');
+    const main = document.querySelector('.main');
+
+    hamburgerBtn.addEventListener('click', () => {
+      settingsPanel.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      settingsPanel.classList.remove('open');
+    });
+
+    // Fondo dinámico
+    wallpaperButtons.forEach(img => {
+      img.addEventListener('click', () => {
+        main.style.backgroundImage = `url(${img.src})`;
+        main.style.backgroundSize = 'cover';
+        main.style.backgroundPosition = 'center';
+        main.style.backgroundRepeat = 'no-repeat';
+      });
+    });
+  </script>
+</body>
+</html>
