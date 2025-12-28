@@ -298,6 +298,51 @@ body {
   display: flex;
   flex-direction: row;
 }
+.edit-input {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin: 2px 0;
+}
+
+.edit-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.cancel-btn {
+  background: var(--danger);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #e53935;
+}
+
+.task-actions .cancel-btn {
+  background: var(--danger);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.task-actions .cancel-btn:hover {
+  background: #e53935;
+}
+
 
 .checkbox {
   display: inline-flex;
