@@ -1,0 +1,275 @@
+/* ===========================
+   📱 Mobile (iPhone 17, Pixel 9, Galaxy S25)
+   Layout Figma ≤430px
+   =========================== */
+@media screen and (max-width: 430px) {
+  #app {
+    display: grid;
+    grid-template-columns: 40vw 60vw;
+    grid-template-rows: auto 1fr;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .topbar {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 8px;
+    height: auto;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .search input {
+    width: 30vw;
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .sidebar {
+    grid-column: 1;
+    grid-row: 2;
+    min-height: 100vh;
+    max-width: 40vw;
+    display: grid;
+    padding: 12px;
+  }
+
+  .user-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .user-card img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .user-name,
+  .user-email {
+    font-size: 0.6rem;
+    color: var(--text);
+  }
+
+  .nav-sections,
+  .nav-item {
+    width: 30vw;
+  }
+
+  .main {
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 100vh;
+    min-width: 60vw;
+    padding: 16px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  .main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 18, 18, 0.85);
+    z-index: -1;
+  }
+  
+  .main-header {
+    gap: 8px;
+  }
+
+  .main-header h1 {
+    font-size: 0.8rem;
+  }
+
+  .task {
+    grid-template-columns: 1fr auto;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .task-meta {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .btn,
+  .btn-outline,
+  .btn-icon {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    width: 14vw;
+    background: var(--primary);
+    color: white;
+  }
+
+  .btn:hover {
+    background: #3b78d8;
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .btn-outline.is-active {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .btn-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+  }
+
+  .wallpaper-card img {
+    width: 100%;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease;
+  }
+
+  .wallpaper-card:hover img {
+    transform: scale(1.05);
+    border-color: var(--primary);
+  }
+}
+
+/* ===========================
+   📲 Tablet portrait (iPad Air)
+   Layout Figma 431–834px
+   =========================== */
+@media screen and (min-width: 431px) and (max-width: 834px) {
+  #app {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .sidebar {
+    width: 220px;
+    padding: 16px;
+  }
+
+  .main {
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .wallpaper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wallpaper-card img {
+    height: 80px;
+  }
+}
+
+/* ===========================
+   💻 Tablet landscape / small laptop
+   Layout Figma 835–1280px
+   =========================== */
+@media screen and (min-width: 835px) and (max-width: 1280px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .search input {
+    width: 220px;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .task {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===========================
+   🖥️ Desktop estándar
+   Layout Figma 1281–1440px
+   =========================== */
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+  .sidebar {
+    width: 280px;
+  }
+
+  .search input {
+    width: 280px;
+  }
+
+  .main {
+    padding: 24px;
+  }
+
+  .task {
+    font-size: 1rem;
+  }
+}
+
+/* ===========================
+   🖥️ Monitores grandes
+   Layout Figma ≥1920px
+   =========================== */
+@media screen and (min-width: 1920px) {
+  .main {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .task {
+    font-size: 1.1rem;
+    padding: 16px;
+  }
+
+  .wallpaper-card img {
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .main {
+    max-width: 2000px;
+  }
+
+  .search input {
+    width: 400px;
+  }
+
+  .task {
+    font-size: 1.2rem;
+  }
+}

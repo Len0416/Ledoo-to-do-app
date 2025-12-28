@@ -294,6 +294,10 @@ body {
   background: var(--surface);
   box-shadow: var(--shadow);
 }
+.task-actions {
+  display: flex;
+  flex-direction: row;
+}
 
 .checkbox {
   display: inline-flex;
@@ -342,12 +346,4 @@ body {
   overflow: hidden!important;
   clip: rect(0,0,0,0)!important;
   border: 0!important;
-}
-
-/* Responsive */
-@media (max-width: 960px) {
-  #app { grid-template-columns: 1fr }
-  .sidebar { display: none }
-  .topbar-center .search input { width: 180px }
-  .wallpaper-grid { grid-template-columns: repeat(2, 1fr) }
 }

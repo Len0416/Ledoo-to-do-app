@@ -6,21 +6,23 @@
   <title>Ledoo — Lista de tareas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Estilos -->
   <link rel="stylesheet" href="/assets/styles/styles.css" />
+  <link rel="stylesheet" href="/assets/styles/mediaqueries.css" />
 </head>
 <body class="theme-dark">
   <div id="app">
     <!-- Topbar -->
     <header class="topbar" aria-label="Barra superior">
-        <span class="logo">Ledoo</span>
-        <label class="search">
-          <input type="search" placeholder="Buscar tareas…" />
-        </label>
-        <button class="btn-icon" aria-label="Nueva tarea">＋</button>
-        <button class="btn-icon" aria-label="Notificaciones">🔔</button>
-        <button class="btn-icon" aria-label="Perfil">👤</button>
-        <!-- Botón hamburguesa -->
-        <button class="btn-icon hamburger" aria-label="Abrir ajustes">☰</button>
+      <span class="logo">Ledoo</span>
+      <label class="search">
+        <input type="search" placeholder="Buscar tareas…" />
+      </label>
+      <button class="btn-icon" aria-label="Nueva tarea">＋</button>
+      <button class="btn-icon" aria-label="Notificaciones">🔔</button>
+      <button class="btn-icon" aria-label="Perfil">👤</button>
+      <!-- Botón hamburguesa -->
+      <button class="btn-icon hamburger" aria-label="Abrir ajustes">☰</button>
     </header>
 
     <!-- Sidebar -->
@@ -142,30 +144,6 @@
   </aside>
 
   <!-- Scripts -->
-  <script>
-    const hamburgerBtn = document.querySelector('.hamburger');
-    const settingsPanel = document.querySelector('.settings-panel');
-    const closeBtn = document.querySelector('.close-settings');
-    const wallpaperButtons = document.querySelectorAll('.wallpaper-card img');
-    const main = document.querySelector('.main');
-
-    hamburgerBtn.addEventListener('click', () => {
-      settingsPanel.classList.add('open');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      settingsPanel.classList.remove('open');
-    });
-
-    // Fondo dinámico
-    wallpaperButtons.forEach(img => {
-      img.addEventListener('click', () => {
-        main.style.backgroundImage = `url(${img.src})`;
-        main.style.backgroundSize = 'cover';
-        main.style.backgroundPosition = 'center';
-        main.style.backgroundRepeat = 'no-repeat';
-      });
-    });
-  </script>
+  <script src="/assets/scripts/functions.js"></script>
 </body>
 </html>
