@@ -83,7 +83,18 @@
       </header>
 
       <section class="tasks" aria-label="Lista de tareas">
+        <!-- Aquí se insertan las tareas dinámicas -->
+
       </section>
+      <form class="task-form">
+        <input type="text" class="task-input" placeholder="Nueva tarea…" required />
+        <input type="datetime-local" class="task-date" />
+        <label class="task-important">
+          <input type="checkbox" />
+          Importante
+        </label>
+        <button type="submit">Agregar</button>
+      </form>
     </main>
   </div>
 

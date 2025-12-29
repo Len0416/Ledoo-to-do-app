@@ -108,6 +108,29 @@
     color: var(--muted);
   }
 
+  .task-form {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+    margin-top: 20px;
+    }
+
+    .task-form input[type="text"],
+    .task-form input[type="datetime-local"] {
+    width: 100%;
+    font-size: 0.85rem;
+    }
+
+    .task-form button {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 10px;
+    }
+
+    .task-form label.task-important {
+    font-size: 0.8rem;
+    }
+
   .btn,
   .btn-outline,
   .btn-icon {
@@ -172,19 +195,25 @@
    =========================== */
 @media screen and (min-width: 431px) and (max-width: 834px) {
   #app {
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 280px 1fr;
+    height: 100vh;
   }
-
   .sidebar {
-    width: 220px;
-    padding: 16px;
+    height: 100vh;
+    width: 280px;
+    padding: 20px;
   }
 
   .main {
-    padding: 20px;
+    height: 100vh;
+    max-width: 554px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+
+  .task-form {
+    flex-wrap: wrap;
   }
 
   .wallpaper-grid {
@@ -201,8 +230,13 @@
    Layout Figma 835–1280px
    =========================== */
 @media screen and (min-width: 835px) and (max-width: 1280px) {
+  #app {
+    height: 100vh;
+  }
+
   .sidebar {
-    width: 240px;
+    width: 280px;
+    height: 100vh;
   }
 
   .search input {
@@ -210,14 +244,104 @@
   }
 
   .main {
-    padding: 20px;
+    max-width: 650px;
+    height: 100vh;
   }
 
   .task {
     font-size: 0.95rem;
   }
-}
 
+  .task-form {
+    flex-wrap: wrap;
+  }
+}
+/* ===========================
+   🧭 Google Nest Hub / Nest Hub Max
+   Layout 1024×600 y 1280×800
+   =========================== */
+@media screen and (min-width: 600px) and (max-width: 1280px) {
+  #app {
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto 1fr;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    width: 280px;
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .main {
+    min-width: 744px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  .main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 18, 18, 0.85);
+    z-index: -1;
+  }
+
+  .main-header h1 {
+    font-size: 1rem;
+  }
+
+  .task {
+    font-size: 0.95rem;
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .task-meta {
+    font-size: 0.85rem;
+    gap: 6px;
+  }
+
+  .task-actions {
+    display: flex;
+    flex-direction: row;
+    }
+
+  .task-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-height: 70px;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 10px;
+    background: var(--surface-2);
+  }
+
+  .task-form input[type="text"],
+  .task-form input[type="datetime-local"] {
+    width: 35%;
+    font-size: 0.9rem;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .task-form label.task-important {
+    font-size: 0.9rem;
+  }
+
+  .task-form button {
+    font-size: 0.9rem;
+    padding: 10px;
+    border-radius: 8px;
+  }
+}
 /* ===========================
    🖥️ Desktop estándar
    Layout Figma 1281–1440px
@@ -229,10 +353,6 @@
 
   .search input {
     width: 280px;
-  }
-
-  .main {
-    padding: 24px;
   }
 
   .task {

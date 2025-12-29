@@ -284,8 +284,7 @@ body {
   gap: 10px;
 }
 .task {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
   gap: 12px;
   padding: 12px;
@@ -296,8 +295,48 @@ body {
 }
 .task-actions {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
+
+.task-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px;
+  background: var(--surface-2);
+  border-radius: 10px;
+  align-items: center;
+}
+
+.task-form input[type="text"],
+.task-form input[type="datetime-local"] {
+  flex: 1 1 100%;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface-1);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.task-form label.task-important {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.task-form button {
+  padding: 8px 16px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
 .edit-input {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -306,11 +345,6 @@ body {
   border-radius: 6px;
   font-size: 0.9rem;
   margin: 2px 0;
-}
-
-.edit-input:focus {
-  outline: none;
-  border-color: var(--primary);
 }
 
 .cancel-btn {
@@ -324,6 +358,10 @@ body {
   cursor: pointer;
 }
 
+.edit-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
 .cancel-btn:hover {
   background: #e53935;
 }

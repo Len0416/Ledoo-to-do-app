@@ -161,13 +161,17 @@ function restaurarTareas() {
 document.addEventListener("DOMContentLoaded", () => {
   restaurarTareas();
 
-  const nuevaTareaBtn = document.querySelector('.btn[aria-label="Nueva tarea"]');
-  if (nuevaTareaBtn) {
-    nuevaTareaBtn.addEventListener("click", () => {
-      const titulo = prompt("Título de la tarea:");
-      const importante = confirm("¿Marcar como importante?");
-      if (titulo && titulo.trim() !== "") {
-        crearTarea({ titulo, fecha: "", importante });
+  const form = document.querySelector(".task-form");
+  if (form) {
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const titulo = form.querySelector(".task-input").value.trim();
+      const fecha = form.querySelector(".task-date").value;
+      const importante = form.querySelector(".task-important input").checked;
+
+      if (titulo !== "") {
+        crearTarea({ titulo, fecha, importante });
+        form.reset();
       }
     });
   }
