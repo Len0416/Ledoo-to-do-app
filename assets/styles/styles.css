@@ -265,7 +265,12 @@ body {
   border: none;
   padding: 10px 14px;
 }
+.btn-icon {
+  z-index: 4;
+}
 .btn-outline {
+  width: max-content;
+  height: 40px;
   background: transparent;
   border: 1px solid var(--border);
   color: var(--text);
@@ -315,7 +320,7 @@ body {
   flex-wrap: nowrap;
   gap: 8px;
   align-items: center;
-  z-index: 999;
+  z-index: 4;
   box-shadow: var(--shadow);
 }
 
@@ -433,14 +438,14 @@ body {
 /* Paneles contextuales debajo del topbar */
 .context-panel {
   position: fixed;
-  top: 80px; /* debajo del topbar */
+  top: 60px; /* debajo del topbar */
   left: 0;
   width: 100%;
   height: 35vh;
   background: var(--surface);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  z-index: 1000;
+  z-index: 3;
   transform: translateY(-100%);
   opacity: 0;
   overflow: hidden;
@@ -448,13 +453,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-.context-panel.open {
-  transform: translateY(0);
-  opacity: 1;
-  overflow-y: auto;
-}
-
 
 .panel-header {
   display: flex;
@@ -464,13 +462,57 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
+.panel-header .btn-outline{
+  width: max-content;
+  padding: 10px;
+}
+
 .panel-body {
   flex: 1;
   padding: 16px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 12px;
+}
+
+#panel-secciones-personales .panel-body{
+  align-items: baseline;
+  justify-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+#panel-secciones-principales .panel-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#panel-secciones-principales .panel-body .btn-outline{
+  min-width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+}
+#panel-secciones-principales .panel-body .btn-outline img {
+  height: 30px;
+  width: 30px;
+}
+
+.panel-options {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 8px;
 }
 
 /* Accessibility */

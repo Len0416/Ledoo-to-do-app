@@ -18,48 +18,54 @@
       <label class="search">
         <input type="search" placeholder="Buscar tareas…" />
       </label>
-      <button class="btn-icon" aria-label="panel-perfil">👤</button>
-      <button class="btn-icon" aria-label="panel-secciones-principales">📒</button>
-      <button class="btn-icon" aria-label="panel-secciones-personales">📋</button>
+      <button class="btn-icon" data-panel="panel-perfil" aria-label="panel-perfil">👤</button>
+      <button class="btn-icon" data-panel="panel-secciones-principales" aria-label="panel-secciones-principales">📒</button>
+      <button class="btn-icon" data-panel="panel-secciones-personales" aria-label="panel-secciones-personales">📋</button>
       <!-- Botón hamburguesa -->
-      <button class="btn-icon setting" aria-label="Abrir ajustes">⚙️</button>
+      <button class="btn-icon setting" data-panel="settings-panel" aria-label="Abrir ajustes">⚙️</button>
     </header>
 
     <!-- Paneles contextuales debajo del topbar -->
     <aside class="context-panel" id="panel-perfil">
       <div class="panel-header">
         <h3>Perfil</h3>
-        <button class="btn-icon close-panel" aria-label="Cerrar">✖</button>
+        <div class="panel-options">
+          <button class="btn-outline">Cerrar sesión</button>
+          <button class="btn-icon close-panel" aria-label="Cerrar">✖</button>
+        </div>
       </div>
       <div class="panel-body">
-        <p>Nombre de usuario</p>
-        <p>correousuario@gmail.com</p>
-        <button class="btn-outline">Cerrar sesión</button>
-      </div>
+        <img src="assets/images/icons/User.png" alt="Icono de perfil de usuario">
+        <div class="panel-content">
+          <p>Nombre de usuario</p>
+          <p>correousuario@gmail.com</p>
     </aside>
 
     <aside class="context-panel" id="panel-secciones-principales">
       <div class="panel-header">
         <h3>Secciones principales</h3>
-        <button class="btn-icon close-panel" aria-label="Cerrar">✖</button>
+        <div class="panel-options">
+          <button class="btn-icon close-panel" aria-label="Cerrar">✖</button>
+        </div>
       </div>
       <div class="panel-body">
-        <button class="btn-outline">Hoy</button>
-        <button class="btn-outline">Importante</button>
-        <button class="btn-outline">Tareas</button>
-        <button class="btn-outline">Planificado</button>
+        <button class="btn-outline"><img src="assets/images/icons/Sun.png" alt="Icono de sección para hoy"><p>Hoy</p></button>
+        <button class="btn-outline"><img src="assets/images/icons/Star.png" alt="Icono de sección para hoy"><p>Importante</p></button>
+        <button class="btn-outline"><img src="assets/images/icons/Check square.png" alt="Icono de sección para hoy"><p>Tareas</p></button>
+        <button class="btn-outline"><img src="assets/images/icons/Calendar.png" alt="Icono de sección para hoy"><p>Planificado</p></button>
       </div>
     </aside>
 
     <aside class="context-panel" id="panel-secciones-personales">
       <div class="panel-header">
         <h3>Secciones personales</h3>
+        <button class="btn-outline create-list" aria-label="CrearLista">Crear lista</button>
         <button class="btn-icon close-panel" aria-label="Cerrar">✖</button>
       </div>
       <div class="panel-body">
+        <button class="btn-outline">Estudio</button>
         <button class="btn-outline">Trabajo</button>
         <button class="btn-outline">Personal</button>
-        <button class="btn-outline">Estudio</button>
       </div>
     </aside>
 
@@ -97,12 +103,12 @@
       <div class="lists">
         <div class="lists-header">
           <span>Mis listas</span>
-          <button class="btn-icon" aria-label="Crear lista">＋</button>
         </div>
         <ul class="list-group">
           <li><button class="list-item">Trabajo</button></li>
           <li><button class="list-item">Personal</button></li>
           <li><button class="list-item">Estudio</button></li>
+          <button class="btn-outline create-list" aria-label="CrearLista">Crear lista</button>
         </ul>
       </div>
     </aside>
@@ -136,7 +142,7 @@
   </div>
 
   <!-- Panel de ajustes hamburguesa -->
-  <aside class="settings-panel" aria-label="Ajustes">
+  <aside class="settings-panel open" id="settings-panel" aria-label="Ajustes">
     <div class="settings-header">
       <h3>Ajustes</h3>
       <button class="btn-icon close-settings" aria-label="Cerrar ajustes">✖</button>
@@ -156,8 +162,12 @@
   </aside>
 
   <!-- Scripts -->
-  <script src="/assets/scripts/functions.js"></script>
-  <script src="/assets/scripts/tasks.js"></script>
-  <script src="/assets/scripts/sidebar.js"></script>
+  <script type="module" src="/assets/scripts/tasks/task-init.js"></script>
+  <script type="module" src="/assets/scripts/tasks/task-create.js"></script>
+  <script type="module" src="/assets/scripts/tasks/task-storage.js"></script>
+  <script type="module" src="/assets/scripts/settings/panel-init.js"></script>
+  <script type="module" src="/assets/scripts/settings/panel-manager.js"></script>
+  <script type="module" src="/assets/scripts/settings/settings.js"></script>
+  <script type="module" src="/assets/scripts/settings/appearance.js"></script>
 </body>
 </html>
