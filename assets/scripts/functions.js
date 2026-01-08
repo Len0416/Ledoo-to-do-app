@@ -7,7 +7,7 @@ function toggleSidebar() {
 }
 
 // ===========================
-// 📌 Función: Toggle Ajustes (hamburguesa)
+// 📌 Función: Toggle Ajustes
 // ===========================
 function toggleSettingsPanel() {
   const settingsPanel = document.querySelector('.settings-panel');
@@ -79,12 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ✅ Eventos para hamburguesa
-  const hamburgerBtn = document.querySelector('.hamburger');
+  const settingsBtn = document.querySelector('.setting');
   const closeBtn = document.querySelector('.close-settings');
   const settingsPanel = document.querySelector('.settings-panel');
 
-  if (hamburgerBtn) {
-    hamburgerBtn.addEventListener('click', () => {
+  if (settingsBtn) {
+    settingsBtn.addEventListener('click', () => {
       settingsPanel.classList.add('open');
     });
   }

@@ -1,12 +1,12 @@
 /* ===========================
-   📱 Mobile (iPhone 17, Pixel 9, Galaxy S25)
-   Layout Figma ≤430px
-   =========================== */
-@media screen and (max-width: 430px) {
+  📱 Mobile (iPhone 17, Pixel 9, Galaxy S25)
+  Layout Figma ≤430px
+  =========================== */
+@media screen and (max-width: 431px) {
   #app {
     display: grid;
-    grid-template-columns: 40vw 60vw;
-    grid-template-rows: auto 1fr;
+    grid-template-columns: 100vw;
+    grid-template-rows: 10% 0% 90% ;
     width: 100vw;
     overflow-x: hidden;
   }
@@ -32,12 +32,10 @@
   }
 
   .sidebar {
-    grid-column: 1;
-    grid-row: 2;
-    min-height: 100vh;
-    max-width: 40vw;
+    min-width: 100vw;
     display: grid;
     padding: 12px;
+    justify-content: center;
   }
 
   .user-card {
@@ -46,6 +44,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: hidden;
   }
 
   .user-card img {
@@ -60,17 +59,19 @@
     font-size: 0.6rem;
     color: var(--text);
   }
-
-  .nav-sections,
+  .nav-sections {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+  }
   .nav-item {
-    width: 30vw;
+    width: 150px;
   }
 
   .main {
-    grid-column: 2;
-    grid-row: 2;
-    min-height: 100vh;
-    min-width: 60vw;
+    min-width: 100vw;
     padding: 16px;
     background-size: cover;
     background-position: center;
@@ -187,35 +188,45 @@
     transform: scale(1.05);
     border-color: var(--primary);
   }
+  .context-panel { 
+    top: 56px; 
+    font-size: 0.85rem; 
+    height: 35vh; 
+  } 
+
+  .panel-body { 
+    padding: 10px 12px;
+  }
 }
 
 /* ===========================
-   📲 Tablet portrait (iPad Air)
-   Layout Figma 431–834px
+  📲 Tablet portrait (iPad Air)
+  Layout Figma 431–834px
    =========================== */
 @media screen and (min-width: 431px) and (max-width: 834px) {
   #app {
     grid-template-columns: 280px 1fr;
-    height: 100vh;
+    min-height: 140vh;
   }
-  .sidebar {
-    height: 100vh;
-    width: 280px;
-    padding: 20px;
-  }
-
-  .main {
-    height: 100vh;
-    max-width: 554px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
   .task-form {
-    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px;
+    width: calc(100% - 24px);
+    max-width: 600px;
   }
-
+  .task-form input[type="text"],
+  .task-form input[type="datetime-local"] {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+  .task-form button {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+  .task-form label.task-important {
+    font-size: 0.8rem;
+  }
   .wallpaper-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -226,16 +237,15 @@
 }
 
 /* ===========================
-   💻 Tablet landscape / small laptop
-   Layout Figma 835–1280px
+  💻 Tablet landscape / small laptop
+  Layout Figma 835–1280px
    =========================== */
 @media screen and (min-width: 835px) and (max-width: 1280px) {
   #app {
-    height: 100vh;
+    min-height: 100vh;
   }
 
   .sidebar {
-    width: 280px;
     height: 100vh;
   }
 
@@ -244,7 +254,6 @@
   }
 
   .main {
-    max-width: 650px;
     height: 100vh;
   }
 
@@ -253,98 +262,13 @@
   }
 
   .task-form {
-    flex-wrap: wrap;
+    bottom: 10vh;
+    flex-wrap: nowrap;
   }
 }
 /* ===========================
-   🧭 Google Nest Hub / Nest Hub Max
-   Layout 1024×600 y 1280×800
-   =========================== */
-@media screen and (min-width: 600px) and (max-width: 1280px) {
-  #app {
-    grid-template-columns: 280px 1fr;
-    grid-template-rows: auto 1fr;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .sidebar {
-    width: 280px;
-    padding: 12px;
-    font-size: 0.9rem;
-  }
-
-  .main {
-    min-width: 744px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-  }
-
-  .main::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(18, 18, 18, 0.85);
-    z-index: -1;
-  }
-
-  .main-header h1 {
-    font-size: 1rem;
-  }
-
-  .task {
-    font-size: 0.95rem;
-    padding: 12px;
-    border-radius: 10px;
-  }
-
-  .task-meta {
-    font-size: 0.85rem;
-    gap: 6px;
-  }
-
-  .task-actions {
-    display: flex;
-    flex-direction: row;
-    }
-
-  .task-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-height: 70px;
-    gap: 10px;
-    padding: 14px;
-    border-radius: 10px;
-    background: var(--surface-2);
-  }
-
-  .task-form input[type="text"],
-  .task-form input[type="datetime-local"] {
-    width: 35%;
-    font-size: 0.9rem;
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-  .task-form label.task-important {
-    font-size: 0.9rem;
-  }
-
-  .task-form button {
-    font-size: 0.9rem;
-    padding: 10px;
-    border-radius: 8px;
-  }
-}
-/* ===========================
-   🖥️ Desktop estándar
-   Layout Figma 1281–1440px
+  🖥️ Desktop estándar
+  Layout Figma 1281–1440px
    =========================== */
 @media screen and (min-width: 1281px) and (max-width: 1440px) {
   .sidebar {
@@ -361,15 +285,10 @@
 }
 
 /* ===========================
-   🖥️ Monitores grandes
-   Layout Figma ≥1920px
+  🖥️ Monitores grandes
+  Layout Figma ≥1920px
    =========================== */
 @media screen and (min-width: 1920px) {
-  .main {
-    max-width: 1600px;
-    margin: 0 auto;
-  }
-
   .task {
     font-size: 1.1rem;
     padding: 16px;
@@ -381,10 +300,6 @@
 }
 
 @media screen and (min-width: 2560px) {
-  .main {
-    max-width: 2000px;
-  }
-
   .search input {
     width: 400px;
   }

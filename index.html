@@ -18,12 +18,50 @@
       <label class="search">
         <input type="search" placeholder="Buscar tareas…" />
       </label>
-      <button class="btn-icon" aria-label="Nueva tarea">＋</button>
-      <button class="btn-icon" aria-label="Notificaciones">🔔</button>
-      <button class="btn-icon" aria-label="Perfil">👤</button>
+      <button class="btn-icon" aria-label="panel-perfil">👤</button>
+      <button class="btn-icon" aria-label="panel-secciones-principales">📒</button>
+      <button class="btn-icon" aria-label="panel-secciones-personales">📋</button>
       <!-- Botón hamburguesa -->
-      <button class="btn-icon hamburger" aria-label="Abrir ajustes">☰</button>
+      <button class="btn-icon setting" aria-label="Abrir ajustes">⚙️</button>
     </header>
+
+    <!-- Paneles contextuales debajo del topbar -->
+    <aside class="context-panel" id="panel-perfil">
+      <div class="panel-header">
+        <h3>Perfil</h3>
+        <button class="btn-icon close-panel" aria-label="Cerrar">✖</button>
+      </div>
+      <div class="panel-body">
+        <p>Nombre de usuario</p>
+        <p>correousuario@gmail.com</p>
+        <button class="btn-outline">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <aside class="context-panel" id="panel-secciones-principales">
+      <div class="panel-header">
+        <h3>Secciones principales</h3>
+        <button class="btn-icon close-panel" aria-label="Cerrar">✖</button>
+      </div>
+      <div class="panel-body">
+        <button class="btn-outline">Hoy</button>
+        <button class="btn-outline">Importante</button>
+        <button class="btn-outline">Tareas</button>
+        <button class="btn-outline">Planificado</button>
+      </div>
+    </aside>
+
+    <aside class="context-panel" id="panel-secciones-personales">
+      <div class="panel-header">
+        <h3>Secciones personales</h3>
+        <button class="btn-icon close-panel" aria-label="Cerrar">✖</button>
+      </div>
+      <div class="panel-body">
+        <button class="btn-outline">Trabajo</button>
+        <button class="btn-outline">Personal</button>
+        <button class="btn-outline">Estudio</button>
+      </div>
+    </aside>
 
     <!-- Sidebar -->
     <aside class="sidebar" aria-label="Barra lateral">
@@ -84,7 +122,6 @@
 
       <section class="tasks" aria-label="Lista de tareas">
         <!-- Aquí se insertan las tareas dinámicas -->
-
       </section>
       <form class="task-form">
         <input type="text" class="task-input" placeholder="Nueva tarea…" required />
@@ -121,5 +158,6 @@
   <!-- Scripts -->
   <script src="/assets/scripts/functions.js"></script>
   <script src="/assets/scripts/tasks.js"></script>
+  <script src="/assets/scripts/sidebar.js"></script>
 </body>
 </html>
