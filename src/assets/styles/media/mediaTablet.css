@@ -1,0 +1,44 @@
+/* 📲 Tablet portrait (431–834px) */
+@media screen and (min-width: 431px) and (max-width: 834px) {
+    #app {
+        grid-template-columns: 280px 1fr;
+        min-height: 140vh;
+    }
+
+    .task-form {
+        gap: 10px;
+        padding: 14px;
+        width: calc(100% - 24px);
+        max-width: 600px;
+    }
+
+    .task-form input[type="text"],
+    .task-form input[type="datetime-local"] {
+        width: 100%;
+        font-size: 0.85rem;
+    }
+
+    .task-form button {
+        width: 100%;
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .task-form label.task-important {
+        font-size: 0.8rem;
+    }
+
+    .wallpaper-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wallpaper-card img {
+        height: 80px;
+    }
+
+    .context-panel.open {
+        transform: translateY(0);
+        opacity: 1;
+        overflow-y: auto;
+    }
+}

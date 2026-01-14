@@ -1,0 +1,90 @@
+/* Sidebar */
+.sidebar {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.user-card {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.user-card img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.user-name {
+    font-weight: 600;
+}
+
+.user-email {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.nav-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background: var(--surface-2);
+}
+
+.nav-item.is-active {
+    border-color: var(--border);
+    background: #222;
+}
+
+.divider {
+    height: 1px;
+    background: var(--border);
+}
+
+.lists-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.list-group {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 6px;
+}
+.list-item {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text);
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.list-item:hover { background: var(--surface-2) }

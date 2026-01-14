@@ -1,0 +1,152 @@
+.tasks {
+    display: grid;
+    gap: 10px;
+}
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+.task-actions {
+    display: flex;
+    flex-direction: row;
+}
+
+.task-form {
+    position: fixed;
+    bottom: 16px;
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+    max-width: 700px;
+    width: calc(100% - 32px);
+    padding: 12px;
+    background: var(--surface-2);
+    border-radius: 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    align-items: center;
+    z-index: 4;
+    box-shadow: var(--shadow);
+}
+
+
+.task-form input[type="text"],
+.task-form input[type="datetime-local"] {
+    flex: 1 1 100%;
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface-1);
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.task-form label.task-important {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: var(--text);
+}
+
+.task-form button {
+    padding: 8px 16px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.edit-input {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 4px 6px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin: 2px 0;
+}
+
+.cancel-btn {
+    background: var(--danger);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 32px;
+    height: 32px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.edit-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+.cancel-btn:hover {
+    background: #e53935;
+}
+
+.task-actions .cancel-btn {
+    background: var(--danger);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 32px;
+    height: 32px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.task-actions .cancel-btn:hover {
+    background: #e53935;
+}
+
+.checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkbox input {
+    appearance: none;
+    width: 18px; height: 18px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--surface-2);
+    position: relative;
+}
+
+.checkbox input:checked {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+.checkbox input:checked + span::after {
+    content: "✓";
+    position: relative;
+    left: -18px;
+    color: #001b0b;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.task-title { font-weight: 600 }
+.task-meta {
+    display: flex;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.tag.important {
+    color: #FFD166;
+}

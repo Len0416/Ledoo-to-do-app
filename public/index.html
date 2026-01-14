@@ -6,9 +6,29 @@
   <title>Ledoo — Lista de tareas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Estilos -->
-  <link rel="stylesheet" href="/assets/styles/styles.css" />
-  <link rel="stylesheet" href="/assets/styles/mediaqueries.css" />
+  <!-- Global variables y resets -->
+  <link rel="stylesheet" href="../src/assets/styles/global.css">
+
+  <!-- Tipografías -->
+  <link rel="stylesheet" href="../src/assets/styles/fonts.css">
+
+  <!-- Animaciones -->
+  <link rel="stylesheet" href="../src/assets/styles/animations.css">
+
+  <!-- Layout dividido -->
+  <link rel="stylesheet" href="../src/assets/styles/layout/topbar.css">
+  <link rel="stylesheet" href="../src/assets/styles/layout/sidebar.css">
+  <link rel="stylesheet" href="../src/assets/styles/layout/main.css">
+  <link rel="stylesheet" href="../src/assets/styles/layout/tasks.css">
+  <link rel="stylesheet" href="../src/assets/styles/layout/panels.css">
+  <link rel="stylesheet" href="../src/assets/styles/layout/settings.css">
+
+  <!-- Media queries -->
+  <link rel="stylesheet" href="../src/assets/styles/media/mediaPhone.css">
+  <link rel="stylesheet" href="../src/assets/styles/media/mediaTablet.css">
+  <link rel="stylesheet" href="../src/assets/styles/media/mediaLaptop.css">
+  <link rel="stylesheet" href="../src/assets/styles/media/mediaDesktop.css">
+  <link rel="stylesheet" href="styles/media/mediaLargeMonitor.css">
 </head>
 <body class="theme-dark">
   <div id="app">
@@ -35,7 +55,7 @@
         </div>
       </div>
       <div class="panel-body">
-        <img src="assets/images/icons/User.png" alt="Icono de perfil de usuario">
+        <img src="../src/assets/images/icons/User.png" alt="Icono de perfil de usuario">
         <div class="panel-content">
           <p>Nombre de usuario</p>
           <p>correousuario@gmail.com</p>
@@ -49,10 +69,10 @@
         </div>
       </div>
       <div class="panel-body">
-        <button class="btn-outline"><img src="assets/images/icons/Sun.png" alt="Icono de sección para hoy"><p>Hoy</p></button>
-        <button class="btn-outline"><img src="assets/images/icons/Star.png" alt="Icono de sección para hoy"><p>Importante</p></button>
-        <button class="btn-outline"><img src="assets/images/icons/Check square.png" alt="Icono de sección para hoy"><p>Tareas</p></button>
-        <button class="btn-outline"><img src="assets/images/icons/Calendar.png" alt="Icono de sección para hoy"><p>Planificado</p></button>
+        <button class="btn-outline"><img src="../src/assets/images/icons/Sun.png" alt="Icono de sección para hoy"><p>Hoy</p></button>
+        <button class="btn-outline"><img src="../src/assets/images/icons/Star.png" alt="Icono de sección para hoy"><p>Importante</p></button>
+        <button class="btn-outline"><img src="../src/assets/images/icons/CheckSquare.png" alt="Icono de sección para hoy"><p>Tareas</p></button>
+        <button class="btn-outline"><img src="../src/assets/images/icons/Calendar.png" alt="Icono de sección para hoy"><p>Planificado</p></button>
       </div>
     </aside>
 
@@ -72,7 +92,7 @@
     <!-- Sidebar -->
     <aside class="sidebar" aria-label="Barra lateral">
       <div class="user-card">
-        <img src="assets/images/icons/User.png" alt="Icono de perfil de usuario">
+        <img src="../src/assets/images/icons/User.png" alt="Icono de perfil de usuario">
         <div class="user-info">
           <div class="user-name">Nombre de usuario</div>
           <div class="user-email">correousuario@gmail.com</div>
@@ -81,19 +101,19 @@
 
       <nav class="nav-sections" aria-label="Secciones">
         <button class="nav-item is-active">
-          <img src="assets/images/icons/Sun.png" alt="Icono de sección para hoy">
+          <img src="../src/assets/images/icons/Sun.png" alt="Icono de sección para hoy">
           <span>Hoy</span>
         </button>
         <button class="nav-item">
-          <img src="assets/images/icons/Star.png" alt="Icono de sección para importante">
+          <img src="../src/assets/images/icons/Star.png" alt="Icono de sección para importante">
           <span>Importante</span>
         </button>
         <button class="nav-item">
-          <img src="assets/images/icons/Check square.png" alt="Icono de sección para tareas">
+          <img src="../src/assets/images/icons/CheckSquare.png" alt="Icono de sección para tareas">
           <span>Tareas</span>
         </button>
         <button class="nav-item">
-          <img src="assets/images/icons/Calendar.png" alt="Icono de sección para planificado">
+          <img src="../src/assets/images/icons/Calendar.png" alt="Icono de sección para planificado">
           <span>Planificado</span>
         </button>
       </nav>
@@ -152,22 +172,22 @@
       <button class="btn-outline is-active">Oscuro</button>
     </div>
     <div class="wallpaper-grid">
-      <button class="wallpaper-card"><img src="assets/images/wallpapers/Fondo1.png" alt="Montaña" /></button>
-      <button class="wallpaper-card"><img src="assets/images/wallpapers/Fondo2.png" alt="Ciudad" /></button>
-      <button class="wallpaper-card"><img src="assets/images/wallpapers/Fondo3.png" alt="Costa" /></button>
-      <button class="wallpaper-card"><img src="assets/images/wallpapers/Fondo4.png" alt="Lago" /></button>
-      <button class="wallpaper-card"><img src="assets/images/wallpapers/Fondo5.png" alt="Bosque" /></button>
-      <button class="wallpaper-card"><img src="assets/images/wallpapers/Fondo6.png" alt="Valle" /></button>
+      <button class="wallpaper-card"><img src="../src/assets/images/themes/Fondo1.png" alt="Montaña" /></button>
+      <button class="wallpaper-card"><img src="../src/assets/images/themes/Fondo2.png" alt="Ciudad" /></button>
+      <button class="wallpaper-card"><img src="../src/assets/images/themes/Fondo3.png" alt="Costa" /></button>
+      <button class="wallpaper-card"><img src="../src/assets/images/themes/Fondo4.png" alt="Lago" /></button>
+      <button class="wallpaper-card"><img src="../src/assets/images/themes/Fondo5.png" alt="Bosque" /></button>
+      <button class="wallpaper-card"><img src="../src/assets/images/themes/Fondo6.png" alt="Valle" /></button>
     </div>
   </aside>
 
   <!-- Scripts -->
-  <script type="module" src="/assets/scripts/tasks/task-init.js"></script>
-  <script type="module" src="/assets/scripts/tasks/task-create.js"></script>
-  <script type="module" src="/assets/scripts/tasks/task-storage.js"></script>
-  <script type="module" src="/assets/scripts/settings/panel-init.js"></script>
-  <script type="module" src="/assets/scripts/settings/panel-manager.js"></script>
-  <script type="module" src="/assets/scripts/settings/settings.js"></script>
-  <script type="module" src="/assets/scripts/settings/appearance.js"></script>
+  <script type="module" src="../src/assets/scripts/tasks/task-init.js"></script>
+  <script type="module" src="../src/assets/scripts/tasks/task-create.js"></script>
+  <script type="module" src="../src/assets/scripts/tasks/task-storage.js"></script>
+  <script type="module" src="../src/assets/scripts/settings/panel-init.js"></script>
+  <script type="module" src="../src/assets/scripts/settings/panel-manager.js"></script>
+  <script type="module" src="../src/assets/scripts/settings/settings.js"></script>
+  <script type="module" src="../src/assets/scripts/settings/appearance.js"></script>
 </body>
 </html>
