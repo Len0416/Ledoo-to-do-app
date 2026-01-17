@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAppearance();
 
     // Selecciona todos los botones dentro del topbar (👤, 📒, ⚙️, etc.)
-    const topbarButtons = document.querySelectorAll('.topbar .btn-icon');
+    const topbarButtons = document.querySelectorAll('.topbar .optionItem');
     const settingsPanel = document.querySelector('.settings-panel');
 
     // -------------------------------

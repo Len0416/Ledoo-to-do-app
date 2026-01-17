@@ -1,6 +1,7 @@
 .main {
     padding: 24px;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     gap: 24px;
     background-color: rgba(36, 35, 35, 0.1); /* capa oscura semitransparente */

@@ -28,21 +28,20 @@
   <link rel="stylesheet" href="../src/assets/styles/media/mediaTablet.css">
   <link rel="stylesheet" href="../src/assets/styles/media/mediaLaptop.css">
   <link rel="stylesheet" href="../src/assets/styles/media/mediaDesktop.css">
-  <link rel="stylesheet" href="styles/media/mediaLargeMonitor.css">
+  <link rel="stylesheet" href="../src/assets/styles/media/mediaLargeMonitor.css">
 </head>
 <body class="theme-dark">
   <div id="app">
     <!-- Topbar -->
     <header class="topbar" aria-label="Barra superior">
       <span class="logo">Ledoo</span>
-      <label class="search">
-        <input type="search" placeholder="Buscar tareas…" />
-      </label>
-      <button class="btn-icon" data-panel="panel-perfil" aria-label="panel-perfil">👤</button>
-      <button class="btn-icon" data-panel="panel-secciones-principales" aria-label="panel-secciones-principales">📒</button>
-      <button class="btn-icon" data-panel="panel-secciones-personales" aria-label="panel-secciones-personales">📋</button>
-      <!-- Botón hamburguesa -->
-      <button class="btn-icon setting" data-panel="settings-panel" aria-label="Abrir ajustes">⚙️</button>
+      <nav class="optionsNav">
+        <button class="optionItem" data-panel="panel-perfil" aria-label="panel-perfil">Perfil</button>
+        <button class="optionItem" data-panel="panel-secciones-principales" aria-label="panel-secciones-principales">Secciones</button>
+        <button class="optionItem" data-panel="panel-secciones-personales" aria-label="panel-secciones-personales">Listas</button>
+        <!-- Botón hamburguesa -->
+        <button class="optionItem setting" data-panel="settings-panel" aria-label="Abrir ajustes">Ajustes</button>
+      </nav>
     </header>
 
     <!-- Paneles contextuales debajo del topbar -->
@@ -99,6 +98,8 @@
         </div>
       </div>
 
+      <div class="divider" role="separator"></div>
+
       <nav class="nav-sections" aria-label="Secciones">
         <button class="nav-item is-active">
           <img src="../src/assets/images/icons/Sun.png" alt="Icono de sección para hoy">
@@ -135,20 +136,21 @@
 
     <!-- Main content -->
     <main class="main" aria-label="Contenido principal">
-      <header class="main-header">
-        <h1>Hoy</h1>
-        <div class="actions">
-          <label class="search">
-            <span class="sr-only">Buscar tareas</span>
-            <input type="search" placeholder="Buscar tareas…" />
-          </label>
-          <button class="btn" aria-label="Nueva tarea">Nueva tarea</button>
-        </div>
-      </header>
+      <div>
+        <header class="main-header">
+          <h1>Hoy</h1>
+          <div class="actions">
+            <label class="search">
+              <span class="sr-only">Buscar tareas</span>
+              <input type="search" placeholder="Buscar tareas…" />
+            </label>
+          </div>
+        </header>
 
-      <section class="tasks" aria-label="Lista de tareas">
-        <!-- Aquí se insertan las tareas dinámicas -->
-      </section>
+        <section class="tasks" aria-label="Lista de tareas">
+          <!-- Aquí se insertan las tareas dinámicas -->
+        </section>
+      </div>
       <form class="task-form">
         <input type="text" class="task-input" placeholder="Nueva tarea…" required />
         <input type="datetime-local" class="task-date" />
@@ -162,7 +164,7 @@
   </div>
 
   <!-- Panel de ajustes hamburguesa -->
-  <aside class="settings-panel open" id="settings-panel" aria-label="Ajustes">
+  <aside class="settings-panel" id="settings-panel" aria-label="Ajustes">
     <div class="settings-header">
       <h3>Ajustes</h3>
       <button class="btn-icon close-settings" aria-label="Cerrar ajustes">✖</button>

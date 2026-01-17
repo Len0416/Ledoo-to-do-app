@@ -1,4 +1,6 @@
-import { guardarTareas } from './task-storage.js';
+import { guardarTareas } from "./task-storage.js";
+import { editarTarea } from "./task-edit.js";
+import { attachDeleteHandler } from "./task-delete.js";
 
 export function crearTarea({ titulo, fecha = "", importante = false, completada = false }) {
     const tasksContainer = document.querySelector(".tasks");
@@ -22,17 +24,16 @@ export function crearTarea({ titulo, fecha = "", importante = false, completada 
         </div>
         <div class="task-actions">
         <button class="btn-icon" aria-label="Marcar importante">${importante ? "★" : "☆"}</button>
-        <button class="btn-icon edit-btn" aria-label="Editar">✎</button>
-        <button class="btn-icon" aria-label="Eliminar">🗑</button>
+        <button class="edit-btn" aria-label="Editar">Editar</button>
+        <button class="cancel-btn" aria-label="Eliminar">Eliminar</button>
         </div>
     `;
 
-    // Eventos de eliminar, marcar importante, completar y editar
-    task.querySelector('[aria-label="Eliminar"]').addEventListener("click", () => {
-        task.remove();
-        guardarTareas();
-    });
+    // 🔗 Conectar edición y eliminación
+    editarTarea(task);
+    attachDeleteHandler(task);
 
+    // Evento marcar importante
     const importantBtn = task.querySelector('[aria-label="Marcar importante"]');
     importantBtn.addEventListener("click", () => {
         const meta = task.querySelector(".task-meta");
@@ -49,17 +50,11 @@ export function crearTarea({ titulo, fecha = "", importante = false, completada 
         guardarTareas();
     });
 
+    // Evento completar
     const checkbox = task.querySelector('input[type="checkbox"]');
     checkbox.addEventListener("change", () => {
         task.classList.toggle("completed", checkbox.checked);
         guardarTareas();
-    });
-
-    const editBtn = task.querySelector(".edit-btn");
-    editBtn.addEventListener("click", () => {
-        const isEditing = task.classList.contains("editing");
-        // ... aquí va toda la lógica de edición que ya tienes
-        // (puedes mantenerla igual, solo dentro de este módulo)
     });
 
     tasksContainer.appendChild(task);

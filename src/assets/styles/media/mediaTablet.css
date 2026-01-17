@@ -1,8 +1,11 @@
 /* 📲 Tablet portrait (431–834px) */
 @media screen and (min-width: 431px) and (max-width: 834px) {
     #app {
-        grid-template-columns: 280px 1fr;
-        min-height: 140vh;
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 10% 0% 90%;
+        width: 100vw;
+        overflow-x: hidden;
     }
 
     .task-form {

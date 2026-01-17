@@ -198,4 +198,8 @@
     .panel-body {
         padding: 10px 12px;
     }
+
+    .optionsNav {
+        gap: 5px;
+    }
 }
