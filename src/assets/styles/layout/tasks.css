@@ -12,6 +12,7 @@
     background: var(--surface);
     box-shadow: var(--shadow);
 }
+
 .task-actions {
     display: flex;
     flex-direction: row;
@@ -81,7 +82,6 @@
 }
 
 .edit-btn {
-
     cursor: pointer;
     border-radius: 10px;
     text-align: center;

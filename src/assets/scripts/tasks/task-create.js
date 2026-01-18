@@ -11,21 +11,21 @@ export function crearTarea({ titulo, fecha = "", importante = false, completada 
     if (completada) task.classList.add("completed");
 
     task.innerHTML = `
-        <label class="checkbox">
-        <input type="checkbox" aria-label="Completar tarea: ${titulo}" ${completada ? "checked" : ""} />
-        <span></span>
-        </label>
         <div class="task-body">
         <div class="task-title">${titulo}</div>
         <div class="task-meta">
-            ${importante ? `<span class="tag important">Importante</span>` : ""}
             ${fecha ? `<span class="date">${fecha}</span>` : ""}
         </div>
+        ${importante ? `<span class="tag important">Importante</span>` : ""}
         </div>
         <div class="task-actions">
-        <button class="btn-icon" aria-label="Marcar importante">${importante ? "★" : "☆"}</button>
-        <button class="edit-btn" aria-label="Editar">Editar</button>
-        <button class="cancel-btn" aria-label="Eliminar">Eliminar</button>
+            <label class="checkbox">
+            <input type="checkbox" aria-label="Completar tarea: ${titulo}" ${completada ? "checked" : ""} />
+            <span></span>
+            </label>
+            <button class="btn-icon" aria-label="Marcar importante">${importante ? "★" : "☆"}</button>
+            <button class="edit-btn" aria-label="Editar">Editar</button>
+            <button class="cancel-btn" aria-label="Eliminar">Eliminar</button>
         </div>
     `;
 
@@ -45,7 +45,7 @@ export function crearTarea({ titulo, fecha = "", importante = false, completada 
         const tag = document.createElement("span");
         tag.classList.add("tag", "important");
         tag.textContent = "Importante";
-        meta.insertBefore(tag, meta.querySelector(".date"));
+        meta.insertBefore(tag, meta.querySelector(".btn-icon"));
         }
         guardarTareas();
     });
