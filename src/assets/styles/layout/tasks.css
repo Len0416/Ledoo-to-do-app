@@ -21,7 +21,8 @@
 }
 
 .task-form {
-    margin: 0 auto;
+    position: fixed;
+    bottom: 10px;
     width: 70%;
     padding: 12px;
     background: var(--surface-2);

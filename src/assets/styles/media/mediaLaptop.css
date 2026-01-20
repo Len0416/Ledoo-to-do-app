@@ -20,3 +20,39 @@
         font-size: 0.95rem;
     }
 }
+@media screen and (min-width: 895px) and (max-width: 1000px) {
+    .optionsNav {
+        width: 50%;
+    }
+
+    .main-header .actions {
+        width: 40%;
+    }
+    .task-form {
+        position: fixed;
+        bottom: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        padding: 12px;
+    }
+}
+
+@media screen and (min-width: 835px) and (max-width: 895px) {
+    .optionsNav {
+        width: 60%;
+    }
+
+    .main-header .actions {
+        width: 50%;
+    }
+
+    .task-form {
+        position: fixed;
+        bottom: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        padding: 12px;
+    }
+}
