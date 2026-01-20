@@ -16,11 +16,13 @@
 .task-actions {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap: 8px;
 }
 
 .task-form {
-    max-width: 700px;
-    width: calc(100% - 32px);
+    margin: 0 auto;
+    width: 70%;
     padding: 12px;
     background: var(--surface-2);
     border-radius: 12px;
@@ -82,6 +84,7 @@
 }
 
 .edit-btn {
+    height: 25px;
     cursor: pointer;
     border-radius: 10px;
     text-align: center;
@@ -100,6 +103,7 @@
 }
 
 .task-actions .cancel-btn {
+    height: 25px;
     background: var(--danger);
     color: white;
     border: none;
@@ -150,10 +154,12 @@
 }
 
 .tag.important {
+    max-height: 25px;
     background-color: var(--warning);
-    padding: 0.2rem 0.5rem;
+    padding: 0.1rem 0.5rem;
     border-radius: 4px;
     white-space: nowrap;
+    text-align: center;
 }
 
 .date {

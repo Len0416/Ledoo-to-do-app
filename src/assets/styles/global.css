@@ -16,7 +16,7 @@
 }
 
 * { box-sizing: border-box }
-html, body { height: 100% }
+html, body { min-height: 100vh; width: 100vw; }
 body {
     margin: 0;
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -28,7 +28,8 @@ body {
     display: grid;
     grid-template-columns: 300px 1fr;
     grid-template-rows: auto 1fr;
-    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
 }
 
 .sr-only {

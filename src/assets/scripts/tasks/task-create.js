@@ -16,9 +16,9 @@ export function crearTarea({ titulo, fecha = "", importante = false, completada 
         <div class="task-meta">
             ${fecha ? `<span class="date">${fecha}</span>` : ""}
         </div>
-        ${importante ? `<span class="tag important">Importante</span>` : ""}
         </div>
         <div class="task-actions">
+            ${importante ? `<span class="tag important">Importante</span>` : ""}
             <label class="checkbox">
             <input type="checkbox" aria-label="Completar tarea: ${titulo}" ${completada ? "checked" : ""} />
             <span></span>
@@ -29,25 +29,29 @@ export function crearTarea({ titulo, fecha = "", importante = false, completada 
         </div>
     `;
 
-    // 🔗 Conectar edición y eliminación
+    // Conectar edición y eliminación
     editarTarea(task);
     attachDeleteHandler(task);
 
     // Evento marcar importante
     const importantBtn = task.querySelector('[aria-label="Marcar importante"]');
     importantBtn.addEventListener("click", () => {
-        const meta = task.querySelector(".task-meta");
+        const meta = task.querySelector(".task-actions");
+
         if (importantBtn.textContent === "★") {
-        importantBtn.textContent = "☆";
-        meta.querySelector(".tag.important")?.remove();
+            importantBtn.textContent = "☆";
+            meta.querySelector(".tag.important")?.remove();
         } else {
-        importantBtn.textContent = "★";
-        const tag = document.createElement("span");
-        tag.classList.add("tag", "important");
-        tag.textContent = "Importante";
-        meta.insertBefore(tag, meta.querySelector(".btn-icon"));
+            importantBtn.textContent = "★";
+            // ✅ Evitar duplicados antes de insertar
+            if (!meta.querySelector(".tag.important")) {
+            const tag = document.createElement("span");
+            tag.classList.add("tag", "important");
+            tag.textContent = "Importante";
+            meta.insertBefore(tag, meta.querySelector(".checkbox"));
+            }
         }
-        guardarTareas();
+    guardarTareas();
     });
 
     // Evento completar

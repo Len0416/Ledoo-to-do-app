@@ -44,4 +44,8 @@
         opacity: 1;
         overflow-y: auto;
     }
+
+    .sidebar {
+        overflow: hidden;
+    }
 }
