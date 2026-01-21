@@ -1,15 +1,8 @@
 /* 💻 Tablet landscape / small laptop (835–1280px) */
 @media screen and (min-width: 835px) and (max-width: 1280px) {
-    .sidebar {
-        height: 100vh;
-    }
 
     .search input {
         width: 220px;
-    }
-
-    .main {
-        height: 100vh;
     }
 
     .task-form {
